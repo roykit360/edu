@@ -1,0 +1,29 @@
+{
+  "name": "edu",
+  "version": "1.0.0",
+  "description": "EdupanApp DocuTrack - React + node.js/Express.js + PostgreSQL",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/roykit360/edu.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/roykit360/edu/issues"
+  },
+  "homepage": "https://github.com/roykit360/edu#readme",
+  "dependencies": {
+    "express": "^5.1.0",
+    "morgan": "^1.10.1",
+    "postgresql": "^0.0.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}
