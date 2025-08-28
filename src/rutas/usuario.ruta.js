@@ -27,4 +27,13 @@ router.put('/usuarios/:id', (req, res) => {
     res.send({ message: `Usuario con ID: ${id} actualizado`, usuario: usuarioActualizado });
 });
 
+router.patch('/usuarios/:id', (req, res) => {
+    const { id } = req.params;
+    const cambios = req.body;
+    res.send({ message: `Usuario con ID: ${id} parcialmente actualizado`, cambios });
+});
 
+router.options('/usuarios', (req, res) => {
+    res.set('Allow', 'GET, POST, PUT, PATCH, DELETE, OPTIONS');
+    res.sendStatus(200);
+});
