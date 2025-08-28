@@ -27,4 +27,5 @@ async function conectarYMostrarAdmin() {
 }
 
 conectarYMostrarAdmin();
+
 //prueba de conexion
