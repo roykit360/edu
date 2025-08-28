@@ -1,3 +1,4 @@
+//NO MODIFICAR CODIGO SOLO DEBE CORREGIR LA CONTRASEÑA DE LA BASE DE DATOS
 import PG from "pg";
 const { Client } = PG;
 
@@ -6,18 +7,18 @@ const client = new Client({
     user: 'neondb_owner',
     host: 'ep-lucky-fog-a2x9zvmh.eu-central-1.aws.neon.tech',
     database: 'neondb',
-    password: 'npg_5Rta7XhemApu',
+    password: 'npg_2SAdCYxnMe6T',
     port: 5432,
     ssl: { rejectUnauthorized: false }
 });
 
-// Ejemplo de conexión y consulta
-async function conectarYConsultar() {
+// Conectar y mostrar registros de admin
+async function conectarYMostrarAdmin() {
     try {
         await client.connect();
-        console.log('Conexión exitosa a Neon');
+        console.log('Conexión exitosa a la base de datos neondb');
         const res = await client.query('SELECT * FROM admin;');
-    console.table(res.rows);
+        console.table(res.rows);
     } catch (err) {
         console.error('Error de conexión o consulta:', err);
     } finally {
@@ -25,4 +26,4 @@ async function conectarYConsultar() {
     }
 }
 
-conectarYConsultar();
+conectarYMostrarAdmin();
