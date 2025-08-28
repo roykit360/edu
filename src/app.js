@@ -1,9 +1,11 @@
-import express from 'express' 
-import morgan from 'morgan'
+import express from 'express';
+import morgan from 'morgan';
 
-const app = express()
+import authRautes from "./rutas/usuario.ruta.js";
+const app = express();
 
-app.use(morgan('dev'))
+app.use(morgan('dev'));
 
-export default app 
+app.use(authRoutes);
 
+export default app;
