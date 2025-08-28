@@ -1,11 +1,11 @@
 import express from 'express';
 import morgan from 'morgan';
 
-import authRautes from "./rutas/usuario.ruta.js";
+import usuarioRoutes from "./rutas/usuario.ruta.js";
 const app = express();
 
 app.use(morgan('dev'));
 
-app.use(authRoutes);
+app.use(usuarioRoutes);
 
 export default app;

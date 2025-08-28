@@ -1,3 +1,4 @@
+import { crearTablaUsuario } from '../modelo/usuario.modelo.js';
 import { Router } from "express";
 
 const router = Router();

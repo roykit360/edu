@@ -2,7 +2,7 @@ import PG from "pg";
 
 const { Client } = PG;
 
-// Función para conectarse a la base de Datos
+// Función crear usuario
 export async function crearUsuario({ nombre, correo, contrasena }) {
 	const client = new Client({
 		user: 'neondb_owner',
@@ -15,13 +15,13 @@ export async function crearUsuario({ nombre, correo, contrasena }) {
 
 // Función para crear un nuevo usuario
 	const query = `
-		INSERT INTO usuario (nombre, correo, contrasena)
-		VALUES ($1, $2, $3)
+		INSERT INTO usuario (nombre, correo, contrasena, fecha_creacion)
+		VALUES ($1, $2, $3, $4)
 		RETURNING *;
 	`;
 	try {
 		await client.connect();
-		const res = await client.query(query, [nombre, correo, contrasena]);
+		const res = await client.query(query, [nombre, correo, contrasena, fecha_creacion]);
 		console.log('Usuario creado:', res.rows[0]);
 		return res.rows[0];
 	} catch (err) {
