@@ -1,7 +1,16 @@
-import app from './app.js' 
-import auth from './rutas/auth.ruta.js'; 
+import app from "./app.js";
+import { PORT } from "./config.js";
+import { connectDB } from "./db.js";
 
-app.use('/auth', auth);
+async function main() {
+  try {
+    await connectDB();
+    app.listen(PORT);
+    console.log(`Listening on port http://localhost:${PORT}`);
+    console.log(`Environment: ${process.env.NODE_ENV}`)
+  } catch (error) {
+    console.error(error);
+  }
+}
 
-app.listen(4000)
-console.log('Server is running on port', 4000)
+main();
