@@ -1,4 +1,5 @@
-import { crearTablaUsuario } from '../modelo/usuario.modelo.js';
+//import { crearTablaUsuario } from '../modelo/usuario.modelo.js';
+import{ login, register, logout } from "../controllers/auth.controllers.js"
 import { obtenerAdmins } from '../modelo/admin.modelo.js';
 import { obtenerAdmins } from '../rutas/usuario.ruta.js';
 import { Router } from "express";
