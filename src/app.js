@@ -3,8 +3,8 @@ import morgan from 'morgan';
 import cors from "cors";
 import cookieParser from "cookie-parser";
 
-import authRoutes from "./routes/auth.routes.js";
-import taksRoutes from "./routes/tasks.routes.js";
+import authRoutes from "./rutas/usuario.ruta.js";
+import taksRoutes from "./rutas/tarea.rutas.js";
 import { FRONTEND_URL } from "./config.js";
 
 const app = express();
