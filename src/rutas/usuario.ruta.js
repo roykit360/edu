@@ -1,8 +1,20 @@
 import { crearTablaUsuario } from '../modelo/usuario.modelo.js';
+import { obtenerAdmins } from '../modelo/admin.modelo.js';
+import { obtenerAdmins } from '../rutas/usuario.ruta.js';
 import { Router } from "express";
 
 const router = Router();
 
+router.get('/admins/console', async (req, res) => {
+    try {
+        const admins = await obtenerAdmins();
+        console.log('Datos de admin:', admins);
+        res.status(200).json(admins);
+    } catch (err) {
+        console.error('Error consultando admin:', err);
+        res.status(500).json({ message: 'Error consultando admin', error: err.message });
+    }
+});
 router.get('/usuarios', (req, res) => {
     res.send({ message: 'Lista de usuarios' });
 });
