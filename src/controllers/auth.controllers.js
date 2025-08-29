@@ -1,10 +1,10 @@
 import User from "../models/User.js";
 import { Router } from "express";
-import User from "../models/user.model.js";
+import User from "../modelo/usuario.modelo.js";
 import jwt from "jsonwebtoken";
 import bcrypt from "bcryptjs";
 import { TOKEN_SECRET } from "../config.js";
-import { createAccessToken } from "../libs/jwt.js";
+import { createAccessToken } from "../libreria/jwt.js";
 
 export const register = async (req, res) => {
   try {
