@@ -1,11 +1,6 @@
 import { Router } from "express";
-import {
-  createTask,
-  deleteTask,
-  getTask,
-  getTasks,
-  updateTask,
-} from "../controllers/tarea.controllers.js";
+import {createTask,deleteTask,getTask,getTasks,updateTask,} 
+from "../controllers/tarea.controllers.js";
 import { auth } from "../middle/auth.middle.js";
 import { validateSchema } from "../middle/validacion.middle.js";
 import { createTaskSchema } from "../schemas/task.schema.js";
