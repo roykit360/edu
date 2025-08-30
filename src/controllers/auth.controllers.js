@@ -1,4 +1,4 @@
-import User from "../models/User.js";
+
 import { Router } from "express";
 import User from "../modelo/usuario.modelo.js";
 import jwt from "jsonwebtoken";
@@ -8,23 +8,23 @@ import { createAccessToken } from "../libreria/jwt.js";
 
 export const register = async (req, res) => {
   try {
-    const { username, email, password } = req.body;
+    const { nombre, correo, contrasena } = req.body;
 
-    const userFound = await User.findOne({ email });
+    const userFound = await User.findOne({ correo });
 
-    if (userFound)
+    if (userFound.rows.length > 0)
       return res.status(400).json({
-        message: ["The email is already in use"],
+        message: ["El correo ya está en uso"],
       });
 
     // hashing the password 
-    const passwordHash = await bcrypt.hash(password, 10);
+    const passwordHash = await bcrypt.hash(contrasena, 10);
 
     // usuario creado 
     const newUser = new User({
-      username,
-      email,
-      password: passwordHash,
+      nombre,
+      correo,
+      contrasena: passwordHash,
     });
 
     // Guardar el usuario en la base de datos
@@ -43,8 +43,8 @@ export const register = async (req, res) => {
 
     res.json({
       id: userSaved._id,
-      username: userSaved.username,
-      email: userSaved.email,
+      nombre: userSaved.nombre,
+      correo: userSaved.correo,
     });
   } catch (error) {
     res.status(500).json({ message: error.message });

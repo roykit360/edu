@@ -4,7 +4,7 @@ import {
   logout,
   register,
   verifyToken,
-} from "../controllers/auth.controller.js";
+} from "../controllers/auth.controllers.js";
 import { validateSchema } from "../middle/validacion.middle.js";
 import { loginSchema, registerSchema } from "../schemas/auth.schema.js";
 
